@@ -10,6 +10,7 @@ RUN wget https://www.torproject.org/dist/torbrowser/6.5.1/tor-browser-linux64-6.
 ####user section####
 ENV USER developer
 ENV HOME "/home/$USER"
+ENV VNC_PW Ssrmit09
 RUN useradd --create-home --home-dir $HOME --shell /bin/bash $USER && \
 	mkdir $HOME/.vnc/
 COPY vnc.sh $HOME/.vnc/
@@ -21,7 +22,7 @@ USER "$USER"
 ###/user section####
 
 ####Setup a VNC password####
-RUN	echo vncpassw | vncpasswd -f > ~/.vnc/passwd && \
+RUN	echo $VNC_PW | $VNC_PW -f > ~/.vnc/passwd && \
 	chmod 600 ~/.vnc/passwd
 
 EXPOSE 5901
