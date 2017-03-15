@@ -22,7 +22,7 @@ USER "$USER"
 ###/user section####
 
 ####Setup a VNC password####
-RUN	echo $VNC_PW | $VNC_PW -f > ~/.vnc/passwd && \
+RUN	echo $VNC_PW | vncpasswd -f > ~/.vnc/passwd && \
 	chmod 600 ~/.vnc/passwd
 
 EXPOSE 5901
