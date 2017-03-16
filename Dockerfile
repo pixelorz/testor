@@ -1,7 +1,7 @@
 FROM debian:jessie
 
 RUN apt-get update && \
-	apt-get install -y sudo firefox wget tightvncserver lxterminal fluxbox ca-certificates \
+	apt-get install -y sudo iceweasel wget tightvncserver lxterminal fluxbox ca-certificates \
 	libasound2 libdbus-glib-1-2 libgtk2.0-0 libxrender1 libxt6
 
 ####user section####
