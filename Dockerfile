@@ -1,11 +1,8 @@
 FROM debian:jessie
 
 RUN apt-get update && \
-	apt-get install -y sudo wget xz-utils tightvncserver lxterminal fluxbox ca-certificates \
+	apt-get install -y sudo firefox wget tightvncserver lxterminal fluxbox ca-certificates \
 	libasound2 libdbus-glib-1-2 libgtk2.0-0 libxrender1 libxt6
-
-RUN wget https://www.torproject.org/dist/torbrowser/6.5.1/tor-browser-linux64-6.5.1_en-US.tar.xz \
-  && tar xvf tor-browser-linux64-6.5.1_en-US.tar.xz && rm -rf tor-browser-linux64-6.5.1_en-US.tar.xz
 
 ####user section####
 ENV USER developer
@@ -16,7 +13,7 @@ RUN useradd --create-home --home-dir $HOME --shell /bin/bash $USER && \
 COPY vnc.sh $HOME/.vnc/
 COPY xstartup $HOME/.vnc/
 RUN chmod 760 $HOME/.vnc/vnc.sh $HOME/.vnc/xstartup && \
-	chown -R $USER:$USER $HOME tor-browser_en-US
+	chown -R $USER:$USER $HOME
 
 USER "$USER"
 ###/user section####
