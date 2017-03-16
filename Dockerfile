@@ -7,6 +7,7 @@ RUN mkdir ~/.vnc
 ADD vnc.sh xstartup /
 RUN chmod u+x /vnc.sh /xstartup
 #Setup a VNC password
+USER root
 RUN echo Ssrmit09 | vncpasswd -f > ~/.vnc/passwd &&\
 	chmod 600 ~/.vnc/passwd
 
