@@ -1,5 +1,4 @@
 xhost + &
 xterm -geometry 80x24+0+0i &
-firefox &
 startfluxbox
 pkill tail
