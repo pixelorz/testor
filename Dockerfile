@@ -6,7 +6,7 @@ RUN apt-get update && \
 RUN sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list 
 RUN mkdir ~/.vnc
 ADD vnc.sh xstartup ~/.vnc/
-RUN chmod +x ~/.vnc/vnc.sh ~/.vnc/xstartup
+RUN chmod u+x ~/.vnc/vnc.sh ~/.vnc/xstartup
 #Setup a VNC password
 RUN echo $VNC_PW | vncpasswd -f > ~/.vnc/passwd &&\
 	chmod 600 ~/.vnc/passwd
