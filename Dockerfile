@@ -1,7 +1,6 @@
 FROM debian:jessie
 ENV VNC_PW "Ssrmit09"
-ENV HOME /root
-#USER root
+USER root
 RUN apt-get update && \
 	apt-get install -y sudo wget iceweasel tightvncserver fluxbox ca-certificates \
 	libasound2 libdbus-glib-1-2 libgtk2.0-0 libxrender1 libxt6
