@@ -13,7 +13,7 @@ RUN useradd --create-home --home-dir $HOME --shell /bin/bash $USER && \
 COPY vnc.sh $HOME/.vnc/
 COPY xstartup $HOME/.vnc/
 RUN chmod 760 $HOME/.vnc/vnc.sh $HOME/.vnc/xstartup && \
-	chown -R $USER:$USER
+	chown -R $USER:$USER $HOME
 
 USER "$USER"
 
