@@ -12,7 +12,10 @@ RUN sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 RUN mkdir ~/.vnc
 #Setup a VNC password
 RUN x11vnc -storepasswd $VNC_PW ~/.vnc/passwd
-
+RUN mkdir -p /usr/lib/mozilla-firefox /usr/lib/mozilla-firefox/extensions
+ADD https://addons.mozilla.org/firefox/downloads/latest/vagex2/addon-774177-latest.xpi?src=seavagex-2.2.5-fx.xpi .
 EXPOSE 5900
 
-RUN echo "firefox" >> /.bashrc
+CMD ["firefox","-silent","-install-global-extension","vagex2/addon-774177-latest.xpi","-setDefaultBrowser"]
+
+ENTRYPOINT [ "/usr/bin/firefox" ]
