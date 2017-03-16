@@ -3,6 +3,7 @@ FROM debian:jessie
 RUN apt-get update && \
 	apt-get install -y sudo wget iceweasel tightvncserver lxterminal fluxbox ca-certificates \
 	libasound2 libdbus-glib-1-2 libgtk2.0-0 libxrender1 libxt6
+RUN sudo sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 ####user section####
 ENV USER developer
