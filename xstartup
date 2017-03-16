@@ -1,4 +1,0 @@
-xhost + &
-xterm -geometry 80x24+0+0i &
-startfluxbox
-pkill tail
