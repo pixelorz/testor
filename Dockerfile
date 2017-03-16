@@ -13,4 +13,4 @@ RUN echo $VNC_PW | vncpasswd -f > ~/.vnc/passwd &&\
 
 EXPOSE 5901
 
-CMD ["/root/.vnc/vnc.sh"]
+CMD ["/vnc.sh"]
