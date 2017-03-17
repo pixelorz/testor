@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:6
 RUN yum update && yum install -y tigervnc-server xterm xsetroot twm
 
 RUN mkdir -p /.vnc
